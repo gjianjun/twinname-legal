@@ -30,11 +30,12 @@
     <article class="card">
       <h2>Data collected</h2>
       <ul>
-        <li>App activity: name generations, saved names, feedback, and reports</li>
+        <li>App activity: name generations, saved names, chosen status, feedback, and reports</li>
         <li>Personal info you enter: surname, optional Chinese surname, and naming preferences</li>
-        <li>App info and performance: crash/diagnostics-style operational logs as needed to run the service</li>
-        <li>Device or other IDs: anonymous account ID, install ID, and integrity signals</li>
-        <li>Purchase history: Unlock and Credits entitlements managed through Google Play</li>
+        <li>Account info: anonymous Account ID; if you back up with Google, Google account link data and masked email display</li>
+        <li>App info and performance: operational logs needed to run the service</li>
+        <li>Device or other IDs: account ID, install ID, and integrity signals</li>
+        <li>Purchase history: Unlock and Credits through Google Play; Credits ledger on TwinName servers</li>
       </ul>
     </article>
 
@@ -42,7 +43,7 @@
       <h2>Data usage</h2>
       <ul>
         <li>App functionality</li>
-        <li>Account management</li>
+        <li>Account management, backup, merge, and controlled account switch</li>
         <li>Fraud prevention, security, and compliance</li>
         <li>Analytics needed to operate quotas and improve name quality</li>
       </ul>
@@ -51,8 +52,8 @@
     <article class="card">
       <h2>Data sharing</h2>
       <p>
-        Data may be processed by service providers that power authentication, cloud hosting, purchases, ads, and AI explanations.
-        TwinName does not sell user data.
+        Data may be processed by service providers that power authentication, Google Sign-In, cloud hosting,
+        purchases, ads, and AI explanations. TwinName does not sell user data.
       </p>
     </article>
 
@@ -60,8 +61,17 @@
       <h2>Security practices</h2>
       <ul>
         <li>Data is transmitted in transit using HTTPS</li>
-        <li>Server-side checks validate purchases, ads rewards, and generation quotas</li>
+        <li>Server-side checks validate purchases, ad rewards, and generation quotas</li>
         <li>App Check / Play Integrity help reduce abuse</li>
+        <li>On-device Chinese text-to-speech does not upload spoken audio to TwinName for pronunciation playback</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Purchases note for Play Console</h2>
+      <ul>
+        <li><strong>Unlock:</strong> Google Play Restore purchases</li>
+        <li><strong>Credits:</strong> restored by signing into the same Google-linked TwinName account; not via Play Restore purchases</li>
       </ul>
     </article>
 
@@ -71,6 +81,7 @@
         Users can delete account data in-app. After uninstall, users can request deletion at
         <a href="../delete-account/">Delete Account</a> using their Account ID.
         Web requests are sent by email and completed on our servers after verification, usually within 30 days.
+        Deletion does not automatically issue a refund; Google Play or legal refunds are handled separately.
       </p>
     </article>
 
@@ -83,6 +94,7 @@
 
     <footer class="site-footer">
       <p><a href="../">Back to TwinName Legal</a> · <a href="../privacy/">Privacy Policy</a></p>
+      <p>Support: <a href="mailto:gjianjun666@gmail.com">gjianjun666@gmail.com</a></p>
     </footer>
   </div>
 </body>

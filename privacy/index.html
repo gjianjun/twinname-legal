@@ -31,7 +31,7 @@
       <h2>1. Who we are</h2>
       <p>
         TwinName is a bilingual baby naming and name-decision app. It suggests local-language names paired with
-        Chinese-inspired name suggestions for cultural meaning and inspiration.
+        Chinese name suggestions for cultural meaning and inspiration, and helps parents compare and choose.
       </p>
       <p class="disclaimer">
         TwinName does not provide legal, medical, financial, fortune-telling, or professional advice.
@@ -43,15 +43,21 @@
       <h2>2. Information we process</h2>
       <p>Depending on how you use the app, we may process:</p>
       <ul>
-        <li><strong>Account identifiers:</strong> an anonymous Firebase user ID (Account ID) and an install identifier used for abuse prevention.</li>
+        <li><strong>Account identifiers:</strong> a Firebase user ID (Account ID). New installs start with an anonymous account. You may optionally link a Google account to back up saved names and to purchase Credits.</li>
+        <li><strong>Google account data (if you sign in):</strong> Google provider user ID and an email address used for account linking. In the app we show a masked email (for example g***@gmail.com). We use this to restore your TwinName data on another device and to secure Credits.</li>
+        <li><strong>Install identifier:</strong> a local install ID used for abuse prevention (for example welcome-quota limits). Deleting your account does not always delete anti-abuse install records.</li>
         <li><strong>Preferences you enter:</strong> baby name language, gender preference, surname, optional Chinese surname, style, and meaning preferences.</li>
-        <li><strong>App activity:</strong> generated name pairings, favorites, maybe/rejected status, compare selections, feedback, and content reports.</li>
-        <li><strong>Usage and purchase data:</strong> generation quota, rewarded-ad rewards, Unlock / Credits purchase status, and restore records.</li>
+        <li><strong>App activity:</strong> generated name pairings, favorites, maybe / rejected / chosen status, compare selections, generation history links, feedback, and content reports.</li>
+        <li><strong>Usage and purchase data:</strong> generation quota, rewarded-ad rewards, Unlock and Credits purchase status, Credits ledger entries, pending purchase reconciliation, and Unlock restore records.</li>
+        <li><strong>Account operations:</strong> Google link, anonymous-to-Google merge, controlled account switch, reauthentication, and sync status needed to keep backups consistent.</li>
         <li><strong>Device and security signals:</strong> App Check / Play Integrity results, timezone, and basic request metadata needed to protect the service.</li>
-        <li><strong>Support requests:</strong> email address, Account ID, and optional order information if you contact us or request deletion on this website.</li>
+        <li><strong>Support requests:</strong> email address, Account ID, optional Google Play order ID, and message content if you contact us or request deletion on this website.</li>
       </ul>
       <p>
         Surname and baby preferences are user-entered data. Please avoid entering unnecessary personal information about a child beyond what you choose to provide for naming inspiration.
+      </p>
+      <p>
+        Chinese pronunciation in the app uses on-device text-to-speech when available. Spoken name text is not sent to TwinName servers for TTS.
       </p>
     </article>
 
@@ -59,9 +65,10 @@
       <h2>3. How we use information</h2>
       <ul>
         <li>Generate and explain name pairings</li>
-        <li>Save preferences, shortlists, and decision status</li>
+        <li>Save preferences, shortlists, chosen names, and history</li>
+        <li>Link or merge an anonymous session to a Google-backed TwinName account</li>
         <li>Enforce free, ad, Unlock, and Credits limits</li>
-        <li>Validate purchases and prevent abuse or fraud</li>
+        <li>Validate purchases, reconcile pending payments, and prevent abuse or fraud</li>
         <li>Improve name quality using feedback and reports</li>
         <li>Respond to support and deletion requests</li>
         <li>Meet legal, tax, and store-policy obligations</li>
@@ -69,7 +76,27 @@
     </article>
 
     <article class="card">
-      <h2>4. AI-generated explanations</h2>
+      <h2>4. Google sign-in, backup, and account switching</h2>
+      <ul>
+        <li>You can use TwinName without signing in.</li>
+        <li>Backing up with Google keeps saved names, preferences, history, and unused Credits available when you sign in on another device.</li>
+        <li>Buying Credits requires a linked Google account. Unlock can be purchased while anonymous because it is a Google Play non-consumable and can be restored with Google Play Restore purchases.</li>
+        <li>If your Google credential is already linked to another TwinName account, we may merge anonymous data into that account after confirmation. Daily free / welcome / ad quotas are not added together. Credits follow the destination account ledger only.</li>
+        <li>If you are already signed in and choose “Sign in with a different account,” TwinName does not automatically move the first account’s data into the second account. Pending sync or pending purchases may block the switch until resolved.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>5. Purchases, Credits, and Unlock</h2>
+      <ul>
+        <li><strong>Unlock:</strong> restored with Google Play Restore purchases. After account deletion, Unlock can usually be rebound to a new TwinName account using Restore purchases.</li>
+        <li><strong>Credits:</strong> consumable balance stored in TwinName’s server ledger and tied to your signed-in TwinName account. Unused Credits can be restored by signing in with the same Google account. Google Play Restore purchases does not restore Credits.</li>
+        <li>Deleting your account permanently removes unused Credits tied to that account. Deletion does not automatically start a refund. Refunds approved under Google Play policy or applicable law are handled separately.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>6. AI-generated explanations</h2>
       <p>
         TwinName uses reviewed name libraries and may use an AI model to generate explanations and wording.
         Local and Chinese names are constrained by curated lists. AI does not invent Chinese characters or decide scores.
@@ -80,11 +107,12 @@
     </article>
 
     <article class="card">
-      <h2>5. Sharing</h2>
+      <h2>7. Sharing</h2>
       <p>We may share data with service providers that help us operate TwinName, such as:</p>
       <ul>
         <li>Google Firebase / Google Cloud for authentication, storage, and API hosting</li>
-        <li>Google Play Billing for purchases and restore</li>
+        <li>Google Sign-In for optional account linking</li>
+        <li>Google Play Billing for purchases and Unlock restore</li>
         <li>Google AdMob for rewarded ads</li>
         <li>AI providers used to generate explanations</li>
       </ul>
@@ -92,29 +120,40 @@
     </article>
 
     <article class="card">
-      <h2>6. Retention</h2>
+      <h2>8. Retention</h2>
+      <p>Typical product retention (longer if required by law):</p>
+      <ul>
+        <li>Unsaved generation history: about 180 days</li>
+        <li>Favorites / Maybe / Chosen: while the account exists</li>
+        <li>Migration / anti-abuse install records: about 180 days</li>
+        <li>Purchase, refund, and chargeback ledger records: about 7 years or as legally required</li>
+        <li>Deletion requests: about 3 years</li>
+        <li>Support email: about 2 years</li>
+        <li>Content reports and handling records: about 2 years</li>
+      </ul>
       <p>
-        We keep account-linked data while your account is active. After a verified deletion request, we delete or de-identify
-        account data, except records we may retain for security, fraud prevention, accounting, or legal compliance
-        (for example purchase receipts and abuse-prevention install records).
+        After a verified deletion request, we delete or de-identify account content and identity links,
+        except minimized financial tombstones, security, fraud-prevention, or legal records.
       </p>
     </article>
 
     <article class="card">
-      <h2>7. Your choices</h2>
+      <h2>9. Your choices</h2>
       <ul>
+        <li>Use TwinName anonymously, or back up with Google</li>
         <li>Delete your account and data in the TwinName app under Settings</li>
         <li>Request deletion after uninstalling at <a href="../delete-account/">Delete Account</a></li>
-        <li>Restore Unlock purchases through Google Play Restore purchases</li>
+        <li>Restore Unlock through Google Play Restore purchases</li>
+        <li>Restore unused Credits by signing in with the same Google-linked TwinName account</li>
         <li>Contact support for account or purchase questions</li>
       </ul>
       <p>
-        Because launch accounts are anonymous, keep a copy of your Account ID if you may need web deletion later.
+        Keep a copy of your Account ID if you may need web deletion later. If you use Google backup, also keep access to that Google account.
       </p>
     </article>
 
     <article class="card">
-      <h2>8. Children</h2>
+      <h2>10. Children</h2>
       <p>
         TwinName is designed for adults choosing names for a baby. It is not directed to children, and we do not knowingly
         create accounts for children.
@@ -122,7 +161,7 @@
     </article>
 
     <article class="card">
-      <h2>9. International users</h2>
+      <h2>11. International users</h2>
       <p>
         TwinName may be used internationally. Data may be processed in countries where our service providers operate.
         By using the app, you understand that your information may be transferred to those locations.
@@ -130,7 +169,7 @@
     </article>
 
     <article class="card">
-      <h2>10. Changes</h2>
+      <h2>12. Changes</h2>
       <p>
         We may update this Privacy Policy. The “Last updated” date above will change when we do.
         Continued use of TwinName after an update means you accept the revised policy.
@@ -138,10 +177,11 @@
     </article>
 
     <article class="card">
-      <h2>11. Contact</h2>
+      <h2>13. Contact</h2>
       <p>
-        For privacy or support questions, email
-        <a href="mailto:136825480@qq.com">136825480@qq.com</a>.
+        For privacy, purchase, or support questions, email
+        <a href="mailto:gjianjun666@gmail.com">gjianjun666@gmail.com</a>
+        (TwinName Support).
         To request account deletion after uninstalling, use the
         <a href="../delete-account/">Delete Account</a> page.
       </p>

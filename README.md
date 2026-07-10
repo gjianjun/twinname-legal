@@ -15,9 +15,12 @@ Public site after GitHub Pages is enabled:
 
 ## Before you publish
 
-1. Support email is set to `136825480@qq.com`
-2. Commit and push to the `main` branch of `https://github.com/gjianjun/twinname-legal`
-3. Remember: the delete-account page only collects requests by email; you must delete user data in Firebase / backend using the Account ID within 30 days for verified requests
+1. Support email is `gjianjun666@gmail.com` (display name: TwinName Support)
+2. Confirm pages disclose Google sign-in / link / merge / controlled switch
+3. Confirm Unlock Restore (Play) is distinguished from Credits restore (Google-linked TwinName account)
+4. Confirm deletion wording: no automatic refund; Play/legal refunds handled separately
+5. Commit and push to the `main` branch of `https://github.com/gjianjun/twinname-legal`
+6. Remember: the delete-account page only collects requests by email; you must delete user data in Firebase / backend using the Account ID within 30 days for verified requests
 
 ## Enable GitHub Pages
 
@@ -42,5 +45,3 @@ privacy/index.html
 data-safety/index.html
 delete-account/index.html
 ```
-
-Do not upload a nested extra folder. The repo root should contain `index.html` directly.

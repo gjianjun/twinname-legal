@@ -24,9 +24,14 @@
     </section>
 
     <div class="notice warning">
-      <strong>Before you submit:</strong> deleting your account permanently removes saved names, preferences, and Credits tied to that Account ID.
-      Unlock can usually be restored later with Google Play Restore purchases on a new anonymous account.
-      Credits cannot be restored after deletion.
+      <strong>Before you submit:</strong> deleting your account permanently removes saved names, preferences,
+      generation history links, and unused Credits tied to that Account ID.
+      Deleting your account does <strong>not</strong> automatically start a refund.
+      Refund requests that qualify under Google Play policy or applicable law are handled separately.
+      <br><br>
+      <strong>Unlock</strong> can usually be restored later with Google Play Restore purchases on a new TwinName account.
+      <strong>Unused Credits</strong> are removed with the deleted account and are not restored by Play Restore purchases.
+      If you still need unused Credits, sign in with the same Google-linked account before deleting.
     </div>
 
     <article class="card">
@@ -37,7 +42,8 @@
         <li>Copy <strong>Account ID</strong></li>
       </ol>
       <p class="hint">
-        If you already deleted the in-app account or no longer have the Account ID, we may only be able to process your request manually and cannot promise automatic deletion.
+        If you backed up with Google, you can also mention the Google account email you used.
+        If you already deleted the in-app account or no longer have the Account ID, we may only be able to process your request manually and cannot promise completion within 30 days.
       </p>
     </article>
 
@@ -54,6 +60,11 @@
           <label for="email">Contact email</label>
           <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
           <p class="hint">We use this only to confirm and follow up on your request.</p>
+        </div>
+
+        <div class="field">
+          <label for="googleEmail">Google account used in TwinName (optional)</label>
+          <input id="googleEmail" name="googleEmail" type="email" placeholder="If you backed up with Google" autocomplete="email">
         </div>
 
         <div class="field">
@@ -74,7 +85,8 @@
 
       <p class="meta">
         Submitting opens your email app with a pre-filled message to
-        <a href="mailto:136825480@qq.com">136825480@qq.com</a>.
+        <a href="mailto:gjianjun666@gmail.com">gjianjun666@gmail.com</a>
+        (TwinName Support).
         This page collects the request; it does not delete data by itself.
         After we verify your Account ID, we delete the account data on our servers and aim to reply within 30 days.
         Without an Account ID, requests are reviewed manually only and are not guaranteed within 30 days.
@@ -95,11 +107,12 @@
   </div>
 
   <script>
-    const SUPPORT_EMAIL = "136825480@qq.com";
+    const SUPPORT_EMAIL = "gjianjun666@gmail.com";
 
     function buildBody() {
       const accountId = document.getElementById("accountId").value.trim();
       const email = document.getElementById("email").value.trim();
+      const googleEmail = document.getElementById("googleEmail").value.trim();
       const orderId = document.getElementById("orderId").value.trim();
       const notes = document.getElementById("notes").value.trim();
 
@@ -108,13 +121,16 @@
         "",
         "Account ID: " + accountId,
         "Contact email: " + email,
+        "Google account used in TwinName: " + (googleEmail || "N/A"),
         "Google Play order ID: " + (orderId || "N/A"),
         "",
         "Notes:",
         notes || "N/A",
         "",
-        "I understand saved names and Credits tied to this Account ID will be permanently removed.",
-        "I understand Unlock may be restored later through Google Play Restore purchases."
+        "I understand saved names and unused Credits tied to this Account ID will be permanently removed.",
+        "I understand deleting my account does not automatically start a refund.",
+        "I understand Unlock may be restored later through Google Play Restore purchases.",
+        "I understand Credits are not restored by Google Play Restore purchases."
       ].join("\n");
     }
 
