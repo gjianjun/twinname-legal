@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete Account · TwinName</title>
+  <meta name="description" content="Request deletion of your TwinName account and associated data.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="../">TwinName</a>
+      <nav class="nav" aria-label="Legal pages">
+        <a href="../privacy/">Privacy</a>
+        <a href="../data-safety/">Data Safety</a>
+        <a href="../delete-account/">Delete Account</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Delete your TwinName account</h1>
+      <p class="lede">Use this page if you already uninstalled the app, or prefer to request deletion by email.</p>
+    </section>
+
+    <div class="notice warning">
+      <strong>Before you submit:</strong> deleting your account permanently removes saved names, preferences, and Credits tied to that Account ID.
+      Unlock can usually be restored later with Google Play Restore purchases on a new anonymous account.
+      Credits cannot be restored after deletion.
+    </div>
+
+    <article class="card">
+      <h2>How to find your Account ID</h2>
+      <ol>
+        <li>Open TwinName</li>
+        <li>Go to <strong>Settings</strong></li>
+        <li>Copy <strong>Account ID</strong></li>
+      </ol>
+      <p class="hint">
+        If you already deleted the in-app account or no longer have the Account ID, we may only be able to process your request manually and cannot promise automatic deletion.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2>Request deletion</h2>
+      <form id="delete-form">
+        <div class="field">
+          <label for="accountId">Account ID</label>
+          <input id="accountId" name="accountId" type="text" required placeholder="Paste your TwinName Account ID" autocomplete="off">
+          <p class="hint">Required for faster verification.</p>
+        </div>
+
+        <div class="field">
+          <label for="email">Contact email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+          <p class="hint">We use this only to confirm and follow up on your request.</p>
+        </div>
+
+        <div class="field">
+          <label for="orderId">Google Play order ID (optional)</label>
+          <input id="orderId" name="orderId" type="text" placeholder="GPA.xxxx-xxxx-xxxx-xxxxx" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="notes">Anything else we should know (optional)</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Example: I already used in-app delete, or I lost access to the device."></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Open email request</button>
+          <a class="button secondary" id="mailto-fallback" href="#">Or email support directly</a>
+        </div>
+      </form>
+
+      <p class="meta">
+        Submitting opens your email app with a pre-filled message. We aim to process verified requests within 30 days.
+        Without an Account ID, requests are handled manually only.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2>Still have the app?</h2>
+      <p>
+        The fastest option is <strong>Settings → Delete account and data</strong> inside TwinName.
+        After that, you can still use this page if you need a follow-up confirmation.
+      </p>
+    </article>
+
+    <footer class="site-footer">
+      <p><a href="../">Back to TwinName Legal</a> · <a href="../privacy/">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const SUPPORT_EMAIL = "136825480@qq.com";
+
+    function buildBody() {
+      const accountId = document.getElementById("accountId").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const orderId = document.getElementById("orderId").value.trim();
+      const notes = document.getElementById("notes").value.trim();
+
+      return [
+        "Please delete my TwinName account and associated data.",
+        "",
+        "Account ID: " + accountId,
+        "Contact email: " + email,
+        "Google Play order ID: " + (orderId || "N/A"),
+        "",
+        "Notes:",
+        notes || "N/A",
+        "",
+        "I understand saved names and Credits tied to this Account ID will be permanently removed.",
+        "I understand Unlock may be restored later through Google Play Restore purchases."
+      ].join("\n");
+    }
+
+    function buildMailto(subject) {
+      return "mailto:" + encodeURIComponent(SUPPORT_EMAIL)
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(buildBody());
+    }
+
+    document.getElementById("mailto-fallback").addEventListener("click", function (event) {
+      event.preventDefault();
+      window.location.href = "mailto:" + encodeURIComponent(SUPPORT_EMAIL)
+        + "?subject=" + encodeURIComponent("TwinName account deletion request");
+    });
+
+    document.getElementById("delete-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      window.location.href = buildMailto("TwinName account deletion request");
+    });
+  </script>
+</body>
+</html>
