@@ -15,8 +15,9 @@ Public site after GitHub Pages is enabled:
 
 ## Before you publish
 
-1. Support email is already set to `136825480@qq.com`
+1. Support email is set to `136825480@qq.com`
 2. Commit and push to the `main` branch of `https://github.com/gjianjun/twinname-legal`
+3. Remember: the delete-account page only collects requests by email; you must delete user data in Firebase / backend using the Account ID within 30 days for verified requests
 
 ## Enable GitHub Pages
 
